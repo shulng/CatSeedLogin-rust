@@ -1,5 +1,7 @@
 mod command;
-use crate::command::{Login, Register, Changepassword};
+
+// 保留必要的导入
+use pumpkin_protocol::ConnectionState::Login as ProtocolLogin;
 use pumpkin::command::tree::CommandTree;
 use pumpkin::command::tree::builder::literal;
 use std::sync::Arc;
@@ -14,7 +16,35 @@ use pumpkin::{
 use pumpkin_util::text::{color::NamedColor, TextComponent};
 use pumpkin_util::PermissionLvl;
 
+use crate::command::{Login, Register, Changepassword};
+
 struct MyJoinHandler; 
+
+const NAMES: &str = "CatSeedLogin";
+const DESCRIPTION: &str = "Login plugin for CatSeed";
+
+#[plugin_method] 
+async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
+    pumpkin::init_log!(); 
+    log::info!("CatSeedLogin-rust has been loaded!");
+    server.register_event(Arc::new(MyJoinHandler), EventPriority::Lowest, true).await;
+    let command = CommandTree::new(NAMES, DESCRIPTION) 
+        .then(literal("login").then(literal("execute").executes(Login {})))
+        .then(literal("register").then(literal("execute").executes(Register {})))
+        .then(literal("changepassword").then(literal("execute").executes(Changepassword {})));
+    server.register_command(command, PermissionLvl::Zero).await;
+    Ok(())
+}
+
+#[with_runtime(global)]
+#[async_trait]
+impl EventHandler<PlayerJoinEvent> for MyJoinHandler {
+    async fn handle_blocking(&self, _server: &Arc<Server>, event: &mut PlayerJoinEvent) {
+        event.join_message =
+            TextComponent::text(format!("欢迎游玩, {}!", event.player.gameprofile.name))
+                .color_named(NamedColor::Green);
+    }
+}
 
 #[plugin_impl]
 pub struct MyPlugin {}
@@ -30,27 +60,3 @@ impl Default for MyPlugin {
         Self::new()
     }
 }
-
-#[with_runtime(global)]
-#[async_trait]
-impl EventHandler<PlayerJoinEvent> for MyJoinHandler {
-    async fn handle_blocking(&self, _server: &Arc<Server>, event: &mut PlayerJoinEvent) {
-        event.join_message =
-            TextComponent::text(format!("欢迎游玩, {}!", event.player.gameprofile.name))
-                .color_named(NamedColor::Green);
-    }
-}
-
-#[plugin_method] 
-async fn on_load(&mut self, server: Arc<Context>) -> Result<(), String> {
-    pumpkin::init_log!(); 
-    log::info!("CatSeedLogin-rust has been loaded!");
-    server.register_event(Arc::new(MyJoinHandler), EventPriority::Lowest, true).await;
-    let command = CommandTree::new(NAMES, DESCRIPTION) 
-        .then(literal("login").execute(Login(login)))
-        .then(literal("register").execute(Register(register)))
-        .then(literal("changepassword").execute(Changepassword(changepassword)));
-    server.register_command(command, PermissionLvl::Zero).await;
-    Ok(())
-}
-

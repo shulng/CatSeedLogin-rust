@@ -146,16 +146,3 @@ jobs:
         files: ./artifacts/macos-library/*
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # 可选：验证构建
-  verify-build:
-    name: Verify Build
-    runs-on: ubuntu-latest
-    needs: build-and-release
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Verify build completes successfully
-      run: echo "All platform builds completed successfully!"

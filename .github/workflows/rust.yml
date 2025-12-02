@@ -2,12 +2,12 @@ name: Build and Release Rust Library
 
 on:
   push:
-    tags: ['v*']  # 当推送v开头的tag时触发
-  workflow_dispatch:  # 允许手动触发
+    tags: ['v*']
+  workflow_dispatch:
 
 env:
   CARGO_NET_GIT_FETCH_WITH_CLI: true
-  RUST_BACKTRACE: full
+  RUSTFLAGS: "-A warnings"  # 关键修改：允许警告
 
 jobs:
   build:
@@ -44,32 +44,21 @@ jobs:
 
     - name: Add Rust target
       run: rustup target add ${{ matrix.target }}
-      shell: bash
-
-    - name: Cache dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-          target
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-cargo-
 
     - name: Build release
       run: cargo build --release --target ${{ matrix.target }}
-      shell: bash
 
     - name: Find and prepare library file
-      shell: bash
       run: |
         # 查找构建出的库文件
         if [ "${{ matrix.os }}" = "windows-latest" ]; then
+          find target/${{ matrix.target }}/release -name "*.dll" | head -1
           LIB_FILE=$(find target/${{ matrix.target }}/release -name "*.dll" -type f | head -1)
         elif [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
+          find target/${{ matrix.target }}/release -name "*.so" | head -1
           LIB_FILE=$(find target/${{ matrix.target }}/release -name "*.so" -type f | head -1)
         else
+          find target/${{ matrix.target }}/release -name "*.dylib" | head -1
           LIB_FILE=$(find target/${{ matrix.target }}/release -name "*.dylib" -type f | head -1)
         fi
         
@@ -81,23 +70,19 @@ jobs:
         
         echo "Found library: $LIB_FILE"
         
-        # 准备发布文件名 - 修复版本号提取逻辑
+        # 准备发布文件名
         if [[ $GITHUB_REF == refs/tags/* ]]; then
-          # 如果是标签触发，提取版本号
           VERSION=${GITHUB_REF#refs/tags/v}
         else
-          # 如果不是标签触发（如手动触发），使用提交SHA前7位
           VERSION="${GITHUB_SHA:0:7}"
         fi
         
         PACKAGE_NAME=$(cargo metadata --no-deps --format-version=1 | jq -r '.packages[0].name' 2>/dev/null || echo "CatSeedLogin-rust")
         ARTIFACT_NAME="${PACKAGE_NAME}_${{ matrix.artifact_name }}_${VERSION}.${{ matrix.file_extension }}"
         
-        # 确保目标目录存在
         mkdir -p dist
         cp "$LIB_FILE" "dist/$ARTIFACT_NAME"
         echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_ENV
-        echo "Artifact: dist/$ARTIFACT_NAME"
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
@@ -110,7 +95,7 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     needs: build
-    if: startsWith(github.ref, 'refs/tags/')  # 只有标签触发时才创建发布
+    if: startsWith(github.ref, 'refs/tags/')
     
     steps:
     - name: Download artifacts

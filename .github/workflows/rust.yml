@@ -4,11 +4,6 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:  # 允许手动触发
-    inputs:
-      changelog:
-        description: '更新内容 (修复的bug和新增功能)'
-        required: true
-        default: '修复已知问题，优化性能'
 
 env:
   CARGO_NET_GIT_FETCH_WITH_CLI: true
@@ -16,13 +11,16 @@ env:
 
 jobs:
   get-version:
-    name: Get Version from Cargo.toml
+    name: Get Version and Commit Info
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get-version.outputs.version }}
+      commit_message: ${{ steps.get-commit-info.outputs.commit_message }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 1  # 只获取最近一次提交
     
     - name: Extract version from Cargo.toml
       id: get-version
@@ -37,6 +35,15 @@ jobs:
           echo "错误: 未找到Cargo.toml文件"
           exit 1
         fi
+    
+    - name: Get latest commit message
+      id: get-commit-info
+      shell: bash
+      run: |
+        # 获取最近一次提交信息
+        COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+        echo "最近一次提交信息: $COMMIT_MESSAGE"
+        echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
 
   build:
     name: Build for ${{ matrix.os }}
@@ -63,6 +70,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 1  # 只获取最近一次提交
 
     - name: Setup Rust
       uses: actions-rust-lang/setup-rust-toolchain@v1
@@ -142,7 +151,7 @@ jobs:
       shell: bash
       run: |
         VERSION="${{ needs.get-version.outputs.version }}"
-        CHANGELOG="${{ github.event.inputs.changelog || '修复已知问题，优化性能' }}"
+        COMMIT_MESSAGE="${{ needs.get-version.outputs.commit_message }}"
         
         echo "# 🐱 CatSeedLogin v${VERSION} 构建完成" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
@@ -154,32 +163,32 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         
         echo "## 🔧 更新内容" >> $GITHUB_STEP_SUMMARY
-        echo "$CHANGELOG" >> $GITHUB_STEP_SUMMARY
+        echo "基于最近一次提交: $COMMIT_MESSAGE" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         
         echo "## 📦 下载链接" >> $GITHUB_STEP_SUMMARY
         echo "构件已上传至 GitHub Actions Artifacts，可在右侧「Artifacts」区域下载：" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         
-        # 修复：完整的if语句，检查文件是否存在
+        # 检查各平台构建结果
         echo "### 可用平台:" >> $GITHUB_STEP_SUMMARY
         
-        #检查Windows文件
-        if [ -f "./artifacts/CatSeedLogin_v${VERSION}_windows.dll" ]; then
+        # 检查Windows文件
+        if ls ./artifacts/CatSeedLogin_v${VERSION}_windows.dll 1> /dev/null 2>&1; then
           echo "- ✅ Windows (x64) - CatSeedLogin_v${VERSION}_windows.dll" >> $GITHUB_STEP_SUMMARY
         else
           echo "- ❌ Windows 构建失败" >> $GITHUB_STEP_SUMMARY
         fi
         
         # 检查Linux文件
-        if [ -f "./artifacts/CatSeedLogin_v${VERSION}_linux.so" ]; then
+        if ls ./artifacts/CatSeedLogin_v${VERSION}_linux.so 1> /dev/null 2>&1; then
           echo "- ✅ Linux (x64) - CatSeedLogin_v${VERSION}_linux.so" >> $GITHUB_STEP_SUMMARY
         else
           echo "- ❌ Linux 构建失败" >> $GITHUB_STEP_SUMMARY
         fi
         
         # 检查macOS文件
-        if [ -f "./artifacts/CatSeedLogin_v${VERSION}_macos.dylib" ]; then
+        if ls ./artifacts/CatSeedLogin_v${VERSION}_macos.dylib 1> /dev/null 2>&1; then
           echo "- ✅ macOS (x64) - CatSeedLogin_v${VERSION}_macos.dylib" >> $GITHUB_STEP_SUMMARY
         else
           echo "- ❌ macOS 构建失败" >> $GITHUB_STEP_SUMMARY
@@ -193,4 +202,11 @@ jobs:
         
         # 同时输出到日志
         echo "构建完成: CatSeedLogin v${VERSION}"
-        echo "更新内容: ${CHANGELOG}"
+        echo "最近一次提交: ${COMMIT_MESSAGE}"
+
+    - name: Upload summary as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-summary-v${{ needs.get-version.outputs.version }}
+        path: $GITHUB_STEP_SUMMARY
+        retention-days: 30

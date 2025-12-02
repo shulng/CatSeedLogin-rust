@@ -14,7 +14,7 @@ pub struct Changepassword;
 impl CommandExecutor for Changepassword {
     async fn execute<'a>(
         &self,
-        sender: &mut CommandSender,
+        _sender: &mut CommandSender,
         _: &Server,
         _: &ConsumedArgs<'a>,
     ) -> Result<(), CommandError> {

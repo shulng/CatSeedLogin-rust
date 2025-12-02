@@ -14,7 +14,7 @@ pub struct Register;
 impl CommandExecutor for Register {
     async fn execute<'a>(
         &self,
-        sender: &mut CommandSender,
+        _sender: &mut CommandSender,
         _: &Server,
         _: &ConsumedArgs<'a>,
     ) -> Result<(), CommandError> {

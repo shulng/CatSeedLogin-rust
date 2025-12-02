@@ -14,7 +14,7 @@ pub struct Login;
 impl CommandExecutor for Login {
     async fn execute<'a>(
         &self,
-        sender: &mut CommandSender,
+        _sender: &mut CommandSender,
         _: &Server,
         _: &ConsumedArgs<'a>,
     ) -> Result<(), CommandError> {

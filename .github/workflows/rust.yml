@@ -1,4 +1,4 @@
-name: rust
+name: Build and Release Rust Library
 
 on:
   push:
@@ -55,15 +55,22 @@ jobs:
           ${{ runner.os }}-cargo-
 
     - name: Build release binary
+      shell: bash  # 强制使用bash，避免PowerShell语法问题
       run: |
+        echo "Building for target: ${{ matrix.target }}"
         cargo build --release --target ${{ matrix.target }}
-        # 在Linux和macOS上，需要设置执行权限
+        
+        # 只在Linux和macOS上设置执行权限
         if [ "${{ matrix.os }}" != "windows-latest" ]; then
+          echo "Setting executable permissions for ${{ matrix.os }}"
           chmod +x target/${{ matrix.target }}/release/*.${{ matrix.file_extension }}
+        else
+          echo "Skipping chmod on Windows"
         fi
 
     - name: Extract library filename from Cargo.toml
       id: lib_name
+      shell: bash
       run: |
         # 从Cargo.toml获取包名，并将连字符转换为下划线作为库名
         PACKAGE_NAME=$(cargo metadata --no-deps --format-version=1 | jq -r '.packages[0].name')
@@ -81,6 +88,7 @@ jobs:
         echo "Built library: $LIBRARY_FILE"
 
     - name: Rename and prepare artifact
+      shell: bash
       run: |
         # 复制库文件到工作目录
         cp target/${{ matrix.target }}/release/${{ steps.lib_name.outputs.library_file }} .
@@ -91,6 +99,7 @@ jobs:
         
         mv ${{ steps.lib_name.outputs.library_file }} $ARTIFACT_NAME
         echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_ENV
+        echo "Artifact prepared: $ARTIFACT_NAME"
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4

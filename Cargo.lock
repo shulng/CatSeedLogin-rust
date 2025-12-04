@@ -583,17 +583,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "derive-getters"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74ef43543e701c01ad77d3a5922755c6a1d71b22d942cb8042be4994b380caff"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
 name = "derive_more"
 version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1679,7 +1668,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "async-trait",
  "base64",
@@ -1723,7 +1712,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -1734,7 +1723,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "log",
  "pumpkin-util",
@@ -1746,7 +1735,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "crc-fast",
  "heck",
@@ -1765,7 +1754,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "async-trait",
  "crossbeam-utils",
@@ -1781,7 +1770,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "heck",
  "proc-macro-error2",
@@ -1793,7 +1782,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "bytes",
  "cesu8",
@@ -1805,7 +1794,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "aes",
  "async-compression",
@@ -1827,7 +1816,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-registry"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "indexmap",
  "pumpkin-protocol",
@@ -1839,7 +1828,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "base64",
  "bytes",
@@ -1864,7 +1853,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6f7006fcb9a99bb6216c669e72d0e9e749e616e6"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#71392b4a38cb9e5f45703c6b8dc689d1736fc2b4"
 dependencies = [
  "async-trait",
  "bitflags",
@@ -1872,7 +1861,6 @@ dependencies = [
  "crossbeam",
  "crossfire",
  "dashmap",
- "derive-getters",
  "enum_dispatch",
  "flate2",
  "futures",
@@ -2782,14 +2770,14 @@ checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
 
 [[package]]
 name = "uuid"
-version = "1.18.1"
+version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f87b8aa10b915a06587d0dec516c282ff295b475d94abf425d62b57710070a2"
+checksum = "e2e054861b4bd027cd373e18e8d8d8e6548085000e41290d95ce0c373a654b4a"
 dependencies = [
  "getrandom 0.3.4",
  "js-sys",
  "md-5",
- "serde",
+ "serde_core",
  "wasm-bindgen",
 ]
 

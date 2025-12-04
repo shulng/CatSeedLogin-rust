@@ -18,6 +18,7 @@ impl CommandExecutor for Register {
         _: &Server,
         _: &ConsumedArgs<'a>,
     ) -> Result<(), CommandError> {
+        println!("登录成功");
         Ok(())
     }
 }

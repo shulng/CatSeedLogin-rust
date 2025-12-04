@@ -3,7 +3,7 @@ use pumpkin::command::tree::CommandTree;
 use pumpkin::plugin::Context;
 use pumpkin::command::tree::builder::literal;
 use pumpkin_util::PermissionLvl;
-use crate::command::{Login, Register, Changepassword};
+use crate::command::{Login, Register, Changepassword, Bindemail, Resetpassword};
 use crate::event::MyJoinHandler;
 
 const NAMES: &str = "CatSeedLogin";
@@ -25,5 +25,13 @@ pub async fn initialize_plugin(server: Arc<Context>) -> Result<(), String> {
     // 创建修改密码命令树
     let changepassword_tree = CommandTree::new(["changepassword"], "Change password command")
        .then(literal("changepassword").execute(Changepassword));
+       
+    // 创建绑定邮箱命令树
+    let bindemail_tree = CommandTree::new(["bindemail"], "bindemail command")
+       .then(literal("bindemail").execute(Bindemail));
+       
+    // 创建忘记密码重置命令树
+    let resetpassword_tree = CommandTree::new(["resetpassword"], "resetpassword command")
+       .then(literal("resetpassword").execute(Resetpassword));
     Ok(())
 }

@@ -2,13 +2,16 @@ name: Build CatSeedLogin Plugin
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 env:
+  CARGO_TERM_COLOR: always
   CARGO_NET_GIT_FETCH_WITH_CLI: true
   RUSTFLAGS: "-A warnings"
 
@@ -16,23 +19,9 @@ jobs:
   build:
     name: Build for ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    
     strategy:
       matrix:
-        include:
-          - os: windows-latest
-            target: x86_64-pc-windows-msvc
-            platform: windows
-            file_extension: dll
-          - os: ubuntu-latest
-            target: x86_64-unknown-linux-gnu
-            platform: linux
-            file_extension: so
-          - os: macos-latest
-            target: x86_64-apple-darwin
-            platform: macos
-            file_extension: dylib
-      fail-fast: false
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
     - name: Checkout repository

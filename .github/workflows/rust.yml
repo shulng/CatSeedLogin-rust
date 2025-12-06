@@ -24,87 +24,29 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-    - name: Get version from Cargo.toml
-      id: version
-      shell: bash
+    - name: Get version
       run: |
-        VERSION=$(grep -E '^version\s*=' Cargo.toml | head -1 | cut -d'"' -f2)
+        VERSION=$(grep -E '^version\s*=' Cargo.toml | cut -d'"' -f2)
         echo "version=$VERSION" >> $GITHUB_ENV
-        echo "Version: $VERSION"
 
-    - name: Get commit message
-      id: commit
-      shell: bash
-      run: |
-        # 只获取提交标题，避免换行符问题
-        COMMIT_MSG=$(git log -1 --pretty=%s)
-        echo "commit_msg=$COMMIT_MSG" >> $GITHUB_ENV
-        echo "Commit: $COMMIT_MSG"
-
-    - name: Setup Rust
-      uses: actions-rust-lang/setup-rust-toolchain@v1
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: stable
-        target: ${{ matrix.target }}
         profile: minimal
 
-    - name: Add Rust target
-      run: rustup target add ${{ matrix.target }}
+    - run: cargo build --release
 
-    - name: Build release
-      run: cargo build --release --target ${{ matrix.target }}
-
-    - name: Find and copy library
-      shell: bash
+    - name: Copy artifact
       run: |
-        # 简化文件查找逻辑
-        if [ "${{ matrix.os }}" = "windows-latest" ]; then
-          EXT="dll"
-        elif [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
-          EXT="so"
-        else
-          EXT="dylib"
-        fi
-        
-        LIB_FILE=$(find target/${{ matrix.target }}/release -name "*.$EXT" -type f | head -1)
-        
-        if [ -z "$LIB_FILE" ]; then
-          echo "Error: No library file found"
-          find target/${{ matrix.target }}/release -type f
-          exit 1
-        fi
-        
-        ARTIFACT_NAME="CatSeedLogin_v${{ env.version }}_${{ matrix.platform }}.$EXT"
-        mkdir -p dist
-        cp "$LIB_FILE" "dist/$ARTIFACT_NAME"
-        echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_ENV
+        if [[ "${{ matrix.os }}" == windows* ]]; then EXT=dll
+        elif [[ "${{ matrix.os }}" == ubuntu* ]]; then EXT=so
+        else EXT=dylib; fi
+        find target/release -name "*.$EXT" -exec cp {} dist/CatSeedLogin.$EXT \;
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v4
       with:
-        name: CatSeedLogin-v${{ env.version }}-${{ matrix.platform }}
-        path: dist/${{ env.artifact_name }}
+        name: CatSeedLogin-${{ env.version }}-${{ matrix.os }}
+        path: dist/CatSeedLogin.*
         retention-days: 90
-
-  summary:
-    name: Create Summary
-    runs-on: ubuntu-latest
-    needs: build
-    
-    steps:
-    - name: Download artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: ./artifacts
-
-    - name: Create summary
-      shell: bash
-      run: |
-        echo "# CatSeedLogin v${{ env.version }} Build Complete" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Latest Commit**: ${{ env.commit_msg }}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Available Downloads**: Check Artifacts section" >> $GITHUB_STEP_SUMMARY

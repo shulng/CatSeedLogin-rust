@@ -1668,7 +1668,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "base64",
  "bytes",
@@ -1710,7 +1710,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -1721,7 +1721,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "log",
  "pumpkin-util",
@@ -1733,7 +1733,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "crc-fast",
  "heck",
@@ -1752,7 +1752,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "crossbeam-utils",
  "log",
@@ -1767,7 +1767,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -1778,7 +1778,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "bytes",
  "cesu8",
@@ -1790,7 +1790,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "aes",
  "async-compression",
@@ -1812,7 +1812,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-registry"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "indexmap",
  "pumpkin-protocol",
@@ -1824,7 +1824,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "base64",
  "bytes",
@@ -1849,7 +1849,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+1.21.10"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#fba4d405acc496c287c62a6aa287d2678dfb9901"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#6fe57ff8efc35ee65a61db348f3bdaa566761bff"
 dependencies = [
  "bitflags",
  "bytes",

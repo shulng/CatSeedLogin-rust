@@ -120,13 +120,12 @@ dependencies = [
 
 [[package]]
 name = "async-compression"
-version = "0.4.36"
+version = "0.4.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "98ec5f6c2f8bc326c994cb9e241cc257ddaba9afa8555a43cffbb5dd86efaa37"
+checksum = "d10e4f991a553474232bc0a31799f6d24b034a84c0971d80d2e2f78b2e576e40"
 dependencies = [
  "compression-codecs",
  "compression-core",
- "futures-core",
  "pin-project-lite",
  "tokio",
 ]
@@ -277,9 +276,9 @@ dependencies = [
 
 [[package]]
 name = "compression-codecs"
-version = "0.4.35"
+version = "0.4.36"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0f7ac3e5b97fdce45e8922fb05cae2c37f7bbd63d30dd94821dacfd8f3f2bf2"
+checksum = "00828ba6fd27b45a448e57dbfe84f1029d4c9f26b368157e9a448a5f49a2ec2a"
 dependencies = [
  "compression-core",
  "flate2",
@@ -444,12 +443,13 @@ checksum = "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
 
 [[package]]
 name = "crossfire"
-version = "2.1.9"
+version = "2.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f19636ec7667a64122ad23414cd773dcdd32532a7df7a4f68ad16bba0db5f02"
+checksum = "fd901251b9b46c1752c85edfee0aee718c03a85a065f4126d32e5d6d419edf48"
 dependencies = [
  "crossbeam-queue",
  "crossbeam-utils",
+ "enum_dispatch",
  "futures-core",
  "parking_lot",
 ]
@@ -1118,9 +1118,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.12.1"
+version = "2.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ad4bb2b565bca0645f4d68c5c9af97fba094e9791da685bf83cb5f3ce74acf2"
+checksum = "7714e70437a7dc3ac8eb7e6f8df75fd8eb422675fc7678aff7364301092b1017"
 dependencies = [
  "equivalent",
  "hashbrown 0.16.1",
@@ -1681,7 +1681,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "base64",
  "bytes",
@@ -1723,7 +1723,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -1734,7 +1734,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "log",
  "pumpkin-util",
@@ -1746,7 +1746,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "crc-fast",
  "heck",
@@ -1765,7 +1765,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "crossbeam-utils",
  "log",
@@ -1780,7 +1780,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -1791,7 +1791,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "bytes",
  "cesu8",
@@ -1803,7 +1803,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "aes",
  "async-compression",
@@ -1825,7 +1825,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-registry"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "indexmap",
  "pumpkin-protocol",
@@ -1837,7 +1837,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "base64",
  "bytes",
@@ -1862,7 +1862,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ce652860e0066c869b1e9acc873b9ce5165d826f"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#0e5eaf550086d79146a46b37075859c5ea181106"
 dependencies = [
  "bitflags",
  "bytes",
@@ -1925,7 +1925,7 @@ dependencies = [
 [[package]]
 name = "rand"
 version = "0.10.0-rc.6"
-source = "git+https://github.com/rust-random/rand#7a14a77f6467cb60e40098b267a2ddddc06b8449"
+source = "git+https://github.com/rust-random/rand#da2211b80e7217403b2bd8305a98ae7bc61c1146"
 dependencies = [
  "chacha20",
  "getrandom 0.4.0-rc.0",
@@ -2588,9 +2588,9 @@ dependencies = [
 
 [[package]]
 name = "tokio-util"
-version = "0.7.17"
+version = "0.7.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2efa149fe76073d6e8fd97ef4f4eca7b67f599660115591483572e406e165594"
+checksum = "9ae9cec805b01e8fc3fd2fe289f89149a9b66dd16786abd8b19cfa7b48cb0098"
 dependencies = [
  "bytes",
  "futures-core",

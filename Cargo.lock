@@ -2333,7 +2333,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "arc-swap",
  "base64",
@@ -2379,7 +2379,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2388,9 +2388,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "pumpkin-codecs"
+version = "0.1.0-dev+1.21.11"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
+dependencies = [
+ "dashmap",
+ "serde_json",
+ "tracing",
+]
+
+[[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2402,7 +2412,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2414,7 +2424,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "crossbeam-utils",
  "pumpkin-data",
@@ -2429,7 +2439,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "proc-macro-error2",
  "pumpkin-data",
@@ -2440,19 +2450,21 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "bytes",
  "cesu8",
  "flate2",
+ "pumpkin-codecs",
  "serde",
  "thiserror 2.0.17",
+ "tracing",
 ]
 
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "aes",
  "async-compression",
@@ -2475,7 +2487,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "base64",
  "bytes",
@@ -2500,7 +2512,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+1.21.11"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9339c1c94ca4987ecfd95af209372ac6b72d85d5"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#974bdd98a6fe091d48d2849ee50185e2444c4bab"
 dependencies = [
  "bitflags",
  "bytes",

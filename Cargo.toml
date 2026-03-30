@@ -16,6 +16,6 @@ pumpkin-api-macros = { git = "https://github.com/Pumpkin-MC/Pumpkin.git", branch
 async-trait = "0.1.83"
 tokio = { version = "1.50", features = ["full"] }
 
-env_logger = "0.11.9"
+env_logger = "0.11.10"
 log = "0.4.29"
 rand = "0.10.0"

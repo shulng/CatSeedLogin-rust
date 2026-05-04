@@ -780,9 +780,9 @@ dependencies = [
 
 [[package]]
 name = "crypto-bigint"
-version = "0.7.0"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f438b626cb7c9dd48a613a9826e6bad9db71097f9d628f7237af2f6bc13c0ec"
+checksum = "42a0d26b245348befa0c121944541476763dcc46ede886c88f9d12e1697d27c3"
 dependencies = [
  "cpubits",
  "ctutils",
@@ -817,7 +817,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "21f41f23de7d24cdbda7f0c4d9c0351f99a4ceb258ef30e5c1927af8987ffe5a"
 dependencies = [
- "crypto-bigint 0.7.0",
+ "crypto-bigint 0.7.3",
  "libm",
  "rand_core 0.10.0",
 ]
@@ -2256,7 +2256,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "986d2e952779af96ea048f160fd9194e1751b4faea78bcf3ceb456efe008088e"
 dependencies = [
  "der 0.8.0",
- "spki 0.8.0-rc.4",
+ "spki 0.8.0",
 ]
 
 [[package]]
@@ -2271,12 +2271,12 @@ dependencies = [
 
 [[package]]
 name = "pkcs8"
-version = "0.11.0-rc.11"
+version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12922b6296c06eb741b02d7b5161e3aaa22864af38dfa025a1a3ba3f68c84577"
+checksum = "451913da69c775a56034ea8d9003d27ee8948e12443eae7c038ba100a4f21cb7"
 dependencies = [
  "der 0.8.0",
- "spki 0.8.0-rc.4",
+ "spki 0.8.0",
 ]
 
 [[package]]
@@ -2434,12 +2434,13 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "arc-swap",
  "base64",
  "bitflags 2.11.1",
  "bytes",
+ "colored",
  "crossbeam",
  "dashmap",
  "flate2",
@@ -2449,7 +2450,6 @@ dependencies = [
  "notify",
  "num-bigint",
  "ordered-float",
- "pkcs8 0.11.0-rc.11",
  "postcard",
  "pumpkin-config",
  "pumpkin-data",
@@ -2467,6 +2467,7 @@ dependencies = [
  "rustyline",
  "serde",
  "serde_json",
+ "serde_repr",
  "sha1",
  "sha2 0.11.0",
  "sysinfo",
@@ -2487,7 +2488,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2498,7 +2499,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "either",
  "serde_json",
@@ -2508,7 +2509,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2520,7 +2521,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2533,7 +2534,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "crossbeam-utils",
  "pumpkin-data",
@@ -2548,7 +2549,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "proc-macro-error2",
  "pumpkin-data",
@@ -2559,7 +2560,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "bytes",
  "cesu8",
@@ -2574,7 +2575,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "aes",
  "async-compression",
@@ -2598,11 +2599,12 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "base64",
  "bytes",
  "colored",
+ "crypto-bigint 0.7.3",
  "ecdsa",
  "enum_dispatch",
  "md5",
@@ -2612,18 +2614,21 @@ dependencies = [
  "proc-macro2",
  "pumpkin-nbt",
  "quote",
+ "rsa",
  "serde",
  "serde_json",
+ "sha2 0.11.0",
  "syn",
  "thiserror 2.0.17",
  "tokio",
+ "ureq",
  "uuid",
 ]
 
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3c6f15d5ebaad8436cb2f20aaa04db86cbaaa336"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#9b88ef56e440d60f84bfa3d48192be41264efc3c"
 dependencies = [
  "bitflags 2.11.1",
  "bytes",
@@ -2835,19 +2840,19 @@ dependencies = [
 
 [[package]]
 name = "rsa"
-version = "0.10.0-rc.17"
+version = "0.10.0-rc.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87ed3e93fc7e473e464b9726f4759659e72bc8665e4b8ea227547024f416d905"
+checksum = "30b2aa4ba0d89f73d1e332df05be0eeab8840351c36ca5654341dfdb57bb3caf"
 dependencies = [
  "const-oid 0.10.1",
- "crypto-bigint 0.7.0",
+ "crypto-bigint 0.7.3",
  "crypto-primes",
  "digest 0.11.2",
  "pkcs1",
- "pkcs8 0.11.0-rc.11",
+ "pkcs8 0.11.0",
  "rand_core 0.10.0",
  "signature 3.0.0-rc.10",
- "spki 0.8.0-rc.4",
+ "spki 0.8.0",
  "zeroize",
 ]
 
@@ -3078,6 +3083,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_repr"
+version = "0.1.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "175ee3e80ae9982737ca543e96133087cbd9a485eecc3bc4de9c1a37b47ea59c"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "serde_spanned"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3246,9 +3262,9 @@ dependencies = [
 
 [[package]]
 name = "spki"
-version = "0.8.0-rc.4"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8baeff88f34ed0691978ec34440140e1572b68c7dd4a495fd14a3dc1944daa80"
+checksum = "1d9efca8738c78ee9484207732f728b1ef517bbb1833d6fc0879ca898a522f6f"
 dependencies = [
  "base64ct",
  "der 0.8.0",

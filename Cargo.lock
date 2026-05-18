@@ -178,6 +178,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "atomic-waker"
+version = "1.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
+
+[[package]]
 name = "autocfg"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -756,9 +762,9 @@ checksum = "d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28"
 
 [[package]]
 name = "crossfire"
-version = "3.1.10"
+version = "3.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ebed7d0a3a92ebc771f880516a5eecef5942a0fc67855dc4f30e719b04c77ac5"
+checksum = "72bdfcf389b100bb85fcf39ad434f67b617813cf0608095c905b79f6b2194aea"
 dependencies = [
  "crossbeam-utils",
  "futures-core",
@@ -1356,6 +1362,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "h2"
+version = "0.4.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "171fefbc92fe4a4de27e0698d6a5b392d6a0e333506bc49133760b3bcf948733"
+dependencies = [
+ "atomic-waker",
+ "bytes",
+ "fnv",
+ "futures-core",
+ "futures-sink",
+ "http",
+ "indexmap",
+ "slab",
+ "tokio",
+ "tokio-util",
+ "tracing",
+]
+
+[[package]]
 name = "hash32"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1397,8 +1422,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4f467dd6dccf739c208452f8014c75c18bb8301b050ad1cfb27153803edb0f51"
 dependencies = [
  "foldhash 0.2.0",
- "serde",
- "serde_core",
 ]
 
 [[package]]
@@ -1468,10 +1491,39 @@ dependencies = [
 ]
 
 [[package]]
+name = "http-body"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1efedce1fb8e6913f23e0c92de8e62cd5b772a67e7b3946df930a62566c93184"
+dependencies = [
+ "bytes",
+ "http",
+]
+
+[[package]]
+name = "http-body-util"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b021d93e26becf5dc7e1b75b1bed1fd93124b374ceb73f43d4d4eafec896a64a"
+dependencies = [
+ "bytes",
+ "futures-core",
+ "http",
+ "http-body",
+ "pin-project-lite",
+]
+
+[[package]]
 name = "httparse"
 version = "1.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6dbf3de79e51f3d586ab4cb9d5c3e2c14aa28ed23d180cf89b4df0454a69cc87"
+
+[[package]]
+name = "httpdate"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df3b46402a9d5adb4c86a0cf463f42e19994e3ee891101b1841f30a545cb49a9"
 
 [[package]]
 name = "hybrid-array"
@@ -1480,6 +1532,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e1b229d73f5803b562cc26e4da0396c8610a4ee209f4fac8fa4f8d709166dc45"
 dependencies = [
  "typenum",
+]
+
+[[package]]
+name = "hyper"
+version = "1.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6299f016b246a94207e63da54dbe807655bf9e00044f73ded42c3ac5305fbcca"
+dependencies = [
+ "atomic-waker",
+ "bytes",
+ "futures-channel",
+ "futures-core",
+ "h2",
+ "http",
+ "http-body",
+ "httparse",
+ "httpdate",
+ "itoa",
+ "pin-project-lite",
+ "smallvec",
+ "tokio",
+ "want",
 ]
 
 [[package]]
@@ -2476,7 +2550,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "arc-swap",
  "base64",
@@ -2488,6 +2562,7 @@ dependencies = [
  "flate2",
  "futures",
  "hmac 0.13.0",
+ "hyper",
  "libloading",
  "notify",
  "num-bigint",
@@ -2523,15 +2598,15 @@ dependencies = [
  "tracing-subscriber",
  "ureq",
  "uuid",
- "wasmparser 0.248.0",
  "wasmtime",
  "wasmtime-wasi",
+ "wasmtime-wasi-http",
 ]
 
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2542,7 +2617,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "either",
  "serde_json",
@@ -2552,7 +2627,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2564,7 +2639,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2577,9 +2652,8 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
- "crossbeam-utils",
  "pumpkin-data",
  "pumpkin-protocol",
  "pumpkin-util",
@@ -2593,7 +2667,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "proc-macro-error2",
  "pumpkin-data",
@@ -2604,7 +2678,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "bytes",
  "cesu8",
@@ -2618,7 +2692,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "aes",
  "async-compression",
@@ -2633,7 +2707,6 @@ dependencies = [
  "pumpkin-util",
  "pumpkin-world",
  "serde",
- "take_mut",
  "thiserror 2.0.17",
  "tokio",
  "uuid",
@@ -2642,7 +2715,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "base64",
  "bytes",
@@ -2655,6 +2728,7 @@ dependencies = [
  "num-traits",
  "p384",
  "proc-macro2",
+ "pumpkin-codecs",
  "pumpkin-nbt",
  "quote",
  "rsa",
@@ -2671,7 +2745,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#d5665545a3e5d18bd51ae99ac99f1fe9ccd1dc19"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5daee977446a0c351516de228ffe073934e49e50"
 dependencies = [
  "arc-swap",
  "bitflags 2.11.1",
@@ -3386,12 +3460,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "take_mut"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f764005d11ee5f36500a149ace24e00e3da98b0158b3e2d53a7495660d3f4d60"
-
-[[package]]
 name = "target-lexicon"
 version = "0.13.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3537,6 +3605,16 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "tokio-rustls"
+version = "0.26.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1729aa945f29d91ba541258c8df89027d5792d85a8841fb65e8bf0f4ede4ef61"
+dependencies = [
+ "rustls",
+ "tokio",
 ]
 
 [[package]]
@@ -3692,6 +3770,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "try-lock"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
+
+[[package]]
 name = "twox-hash"
 version = "1.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3760,7 +3844,7 @@ dependencies = [
  "serde_json",
  "ureq-proto",
  "utf8-zero",
- "webpki-roots",
+ "webpki-roots 1.0.4",
 ]
 
 [[package]]
@@ -3838,6 +3922,15 @@ checksum = "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
 dependencies = [
  "same-file",
  "winapi-util",
+]
+
+[[package]]
+name = "want"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bfa7760aed19e106de2c7c0b581b509f2f25d3dacaf737cb82ac61bc6d760b0e"
+dependencies = [
+ "try-lock",
 ]
 
 [[package]]
@@ -4002,19 +4095,6 @@ dependencies = [
  "bitflags 2.11.1",
  "indexmap",
  "semver",
-]
-
-[[package]]
-name = "wasmparser"
-version = "0.248.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aa4439c5eee9df71ee0c6efb37f63b1fcb1fec38f85f5142c54e7ed05d33091a"
-dependencies = [
- "bitflags 2.11.1",
- "hashbrown 0.17.0",
- "indexmap",
- "semver",
- "serde",
 ]
 
 [[package]]
@@ -4315,6 +4395,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "wasmtime-wasi-http"
+version = "44.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5798e6e48005406983ba6a7b27f3832f1571e53f1401ef2d60111c96eab534b4"
+dependencies = [
+ "async-trait",
+ "bytes",
+ "futures",
+ "http",
+ "http-body",
+ "http-body-util",
+ "hyper",
+ "rustls",
+ "tokio",
+ "tokio-rustls",
+ "tracing",
+ "wasmtime",
+ "wasmtime-wasi",
+ "wasmtime-wasi-io",
+ "webpki-roots 0.26.11",
+]
+
+[[package]]
 name = "wasmtime-wasi-io"
 version = "44.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4347,6 +4450,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f3f4091c56437e86f2b57fa2fac72c4f528957a605b3f44f7c0b3b19a17ac5ee"
 dependencies = [
  "wast",
+]
+
+[[package]]
+name = "webpki-roots"
+version = "0.26.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "521bc38abb08001b01866da9f51eb7c5d647a19260e00054a8c7fd5f9e57f7a9"
+dependencies = [
+ "webpki-roots 1.0.4",
 ]
 
 [[package]]

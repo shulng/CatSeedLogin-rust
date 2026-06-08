@@ -221,9 +221,9 @@ checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
 name = "bitflags"
-version = "2.11.1"
+version = "2.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4512299f36f043ab09a583e57bceb5a5aab7a73db1805848e8fef3c9e8c78b3"
+checksum = "b4388bee8683e3d04af747c73422af53102d2bd24d9eadb6cbc100baef4b43f8"
 
 [[package]]
 name = "block-buffer"
@@ -1474,9 +1474,9 @@ dependencies = [
 
 [[package]]
 name = "hyper"
-version = "1.9.0"
+version = "1.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6299f016b246a94207e63da54dbe807655bf9e00044f73ded42c3ac5305fbcca"
+checksum = "55281c53a1894c864990125767da440a4e630446785086f52523b20033b74498"
 dependencies = [
  "atomic-waker",
  "bytes",
@@ -1657,7 +1657,7 @@ version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bd5b3eaf1a28b758ac0faa5a4254e8ab2705605496f1b1f3fbbc3988ad73d199"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "inotify-sys",
  "libc",
 ]
@@ -1972,7 +1972,7 @@ version = "0.31.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5d6d0705320c1e6ba1d912b5e37cf18071b6c2e9b7fa8215a1e8a7651966f5d3"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "cfg-if",
  "cfg_aliases",
  "libc",
@@ -1984,7 +1984,7 @@ version = "8.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4d3d07927151ff8575b7087f245456e549fea62edf0ec4e565a5ee50c8402bc3"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "fsevent-sys",
  "inotify",
  "kqueue",
@@ -2002,7 +2002,7 @@ version = "2.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "42b8cfee0e339a0337359f3c88165702ac6e600dc01c0cc9579a92d62b08477a"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
 ]
 
 [[package]]
@@ -2083,7 +2083,7 @@ version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2a180dd8642fa45cdb7dd721cd4c11b1cadd4929ce112ebd8b9f5803cc79d536"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
 ]
 
 [[package]]
@@ -2276,7 +2276,7 @@ version = "0.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "60769b8b31b2a9f263dae2776c37b1b28ae246943cf719eb6946a1db05128a61"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "crc32fast",
  "fdeflate",
  "flate2",
@@ -2400,11 +2400,11 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "arc-swap",
  "base64",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "bytes",
  "colored",
  "crossbeam",
@@ -2457,7 +2457,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2468,7 +2468,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "either",
  "serde_json",
@@ -2478,7 +2478,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2490,7 +2490,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2503,7 +2503,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "pumpkin-data",
  "pumpkin-protocol",
@@ -2518,7 +2518,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "proc-macro-error2",
  "pumpkin-data",
@@ -2529,7 +2529,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "bytes",
  "cesu8",
@@ -2543,11 +2543,11 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "aes",
  "async-compression",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "bytes",
  "cfb8",
  "flate2",
@@ -2566,7 +2566,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "base64",
  "bytes",
@@ -2578,15 +2578,12 @@ dependencies = [
  "num-derive",
  "num-traits",
  "p384",
- "proc-macro2",
  "pumpkin-codecs",
  "pumpkin-nbt",
- "quote",
  "rsa",
  "serde",
  "serde_json",
  "sha2 0.11.0",
- "syn",
  "thiserror 2.0.17",
  "tokio",
  "ureq",
@@ -2596,10 +2593,10 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#42f6b9ce3f872d9e4afb4defb2be2a14063ab1dc"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
 dependencies = [
  "arc-swap",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "bytes",
  "crossbeam",
  "crossfire",
@@ -2701,7 +2698,7 @@ version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed2bf2547551a7053d6fdfafda3f938979645c44812fbfcda098faae3f1a362d"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
 ]
 
 [[package]]
@@ -2837,7 +2834,7 @@ version = "1.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b6fe4565b9518b83ef4f91bb47ce29620ca828bd32cb7e408f0062e9930ba190"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "errno",
  "libc",
  "linux-raw-sys",
@@ -2901,7 +2898,7 @@ version = "18.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a990b25f351b25139ddc7f21ee3f6f56f86d6846b74ac8fad3a719a287cd4a0"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "cfg-if",
  "clipboard-win",
  "libc",
@@ -3789,7 +3786,7 @@ version = "0.244.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "47b807c72e1bac69382b3a6fb3dbe8ea4c0ed87ff5629b8685ae6b9a611028fe"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "hashbrown 0.15.5",
  "indexmap",
  "semver",
@@ -3801,7 +3798,7 @@ version = "0.248.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "aa4439c5eee9df71ee0c6efb37f63b1fcb1fec38f85f5142c54e7ed05d33091a"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "hashbrown 0.17.0",
  "indexmap",
  "semver",
@@ -3827,7 +3824,7 @@ checksum = "d35aec1e932d00a7c941f816ad589e65ad8db948b9e971bf8ec655a1669f1f67"
 dependencies = [
  "addr2line",
  "async-trait",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "bumpalo",
  "cc",
  "cfg-if",
@@ -4057,7 +4054,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ce382df367ad2a2d48e139b191dbca3329f7232a43057dc9efc889dac54f1b0b"
 dependencies = [
  "anyhow",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "heck",
  "indexmap",
  "wit-parser 0.248.0",
@@ -4070,7 +4067,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fb1e92a304eaafd672718011c69084041db74fa0fcc3532c5920f492c557b721"
 dependencies = [
  "async-trait",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "bytes",
  "cap-fs-ext",
  "cap-net-ext",
@@ -4489,7 +4486,7 @@ version = "0.36.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f3fd376f71958b862e7afb20cfe5a22830e1963462f3a17f49d82a6c1d1f42d"
 dependencies = [
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "windows-sys 0.59.0",
 ]
 
@@ -4557,7 +4554,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d66ea20e9553b30172b5e831994e35fbde2d165325bec84fc43dbf6f4eb9cb2"
 dependencies = [
  "anyhow",
- "bitflags 2.11.1",
+ "bitflags 2.13.0",
  "indexmap",
  "log",
  "serde",

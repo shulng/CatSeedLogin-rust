@@ -2400,7 +2400,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "arc-swap",
  "base64",
@@ -2414,6 +2414,7 @@ dependencies = [
  "hmac 0.13.0",
  "hyper",
  "image",
+ "indexmap",
  "libloading",
  "notify",
  "num-bigint",
@@ -2457,7 +2458,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2468,7 +2469,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "either",
  "serde_json",
@@ -2478,7 +2479,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2490,7 +2491,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2503,7 +2504,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "pumpkin-data",
  "pumpkin-protocol",
@@ -2518,7 +2519,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "proc-macro-error2",
  "pumpkin-data",
@@ -2529,7 +2530,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "bytes",
  "cesu8",
@@ -2543,7 +2544,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "aes",
  "async-compression",
@@ -2566,7 +2567,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "base64",
  "bytes",
@@ -2593,7 +2594,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#b08be9e158c132e37024ae4318ffaced4b860c25"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
 dependencies = [
  "arc-swap",
  "bitflags 2.13.0",

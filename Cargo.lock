@@ -272,9 +272,9 @@ checksum = "8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495"
 
 [[package]]
 name = "bytes"
-version = "1.11.1"
+version = "1.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e748733b7cbc798e1434b6ac524f0c1ff2ab456fe201501e6497c8417a4fc33"
+checksum = "8ae3f5d315924270530207e2a68396c3cc547f6dca3fbdca317cfb1a51edb593"
 
 [[package]]
 name = "cap-fs-ext"
@@ -789,9 +789,9 @@ dependencies = [
 
 [[package]]
 name = "crypto-bigint"
-version = "0.7.3"
+version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42a0d26b245348befa0c121944541476763dcc46ede886c88f9d12e1697d27c3"
+checksum = "97bb4a855e3b10f84c4e7e895a7de01db7f9a7b7eb7f73ed9773fd52ac686451"
 dependencies = [
  "cpubits",
  "ctutils",
@@ -826,7 +826,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "21f41f23de7d24cdbda7f0c4d9c0351f99a4ceb258ef30e5c1927af8987ffe5a"
 dependencies = [
- "crypto-bigint 0.7.3",
+ "crypto-bigint 0.7.4",
  "libm",
  "rand_core 0.10.0",
 ]
@@ -1718,6 +1718,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "itertools"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b4baf93f58d4425749ca49a51c50ebab072c5df6994d08fed93541c331481dc"
+dependencies = [
+ "either",
+]
+
+[[package]]
 name = "itoa"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2400,7 +2409,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "arc-swap",
  "base64",
@@ -2458,7 +2467,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2469,7 +2478,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "either",
  "serde_json",
@@ -2479,7 +2488,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2491,7 +2500,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2504,7 +2513,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "pumpkin-data",
  "pumpkin-protocol",
@@ -2519,7 +2528,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "proc-macro-error2",
  "pumpkin-data",
@@ -2530,7 +2539,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "bytes",
  "cesu8",
@@ -2544,7 +2553,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "aes",
  "async-compression",
@@ -2567,12 +2576,12 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "base64",
  "bytes",
  "colored",
- "crypto-bigint 0.7.3",
+ "crypto-bigint 0.7.4",
  "ecdsa",
  "enum_dispatch",
  "md5",
@@ -2594,7 +2603,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.1"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8634d8740f7a9d442f2320c3f00b25a366b00b56"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#ed8833d3750fa8369bb9e5561cd35dc14a746bd5"
 dependencies = [
  "arc-swap",
  "bitflags 2.13.0",
@@ -2605,7 +2614,7 @@ dependencies = [
  "enum_dispatch",
  "flate2",
  "futures",
- "itertools",
+ "itertools 0.15.0",
  "lz4-java-wrc",
  "pumpkin-config",
  "pumpkin-data",
@@ -2787,7 +2796,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "30b2aa4ba0d89f73d1e332df05be0eeab8840351c36ca5654341dfdb57bb3caf"
 dependencies = [
  "const-oid 0.10.1",
- "crypto-bigint 0.7.3",
+ "crypto-bigint 0.7.4",
  "crypto-primes",
  "digest 0.11.2",
  "pkcs1",
@@ -3956,7 +3965,7 @@ dependencies = [
  "cranelift-frontend",
  "cranelift-native",
  "gimli",
- "itertools",
+ "itertools 0.14.0",
  "log",
  "object",
  "pulley-interpreter",

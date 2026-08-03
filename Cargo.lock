@@ -138,9 +138,9 @@ dependencies = [
 
 [[package]]
 name = "async-compression"
-version = "0.4.42"
+version = "0.4.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e79b3f8a79cccc2898f31920fc69f304859b3bd567490f75ebf51ae1c792a9ac"
+checksum = "3976abdc8fe7d1133d43d304afd42abdf5bc3e1319d263d223bde07b5efc4be8"
 dependencies = [
  "compression-codecs",
  "compression-core",
@@ -808,6 +808,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "curve25519-dalek"
+version = "5.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b5eed333089e2e1c1ac8c6c0398e5e2497b4c9926ca6d0365ed1e099afa5bc23"
+dependencies = [
+ "cfg-if",
+ "cpufeatures 0.3.0",
+ "curve25519-dalek-derive",
+ "digest 0.11.2",
+ "fiat-crypto",
+ "rustc_version",
+ "subtle",
+]
+
+[[package]]
+name = "curve25519-dalek-derive"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f46882e17999c6cc590af592290432be3bce0428cb0d5f8b6715e4dc7b383eb3"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.111",
+]
+
+[[package]]
 name = "dashmap"
 version = "6.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -917,6 +943,27 @@ dependencies = [
  "signature",
  "spki",
  "zeroize",
+]
+
+[[package]]
+name = "ed25519"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "29fcf32e6c73d1079f83ab4d782de2d81620346a5f38c6237a86a22f8368980a"
+dependencies = [
+ "signature",
+]
+
+[[package]]
+name = "ed25519-dalek"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6ebaa1a2bf1290ab3bfe5a7b771d050ebffab2711c19a81691c683a5144a25de"
+dependencies = [
+ "curve25519-dalek",
+ "ed25519",
+ "sha2 0.11.0",
+ "subtle",
 ]
 
 [[package]]
@@ -1356,6 +1403,12 @@ name = "heck"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
+
+[[package]]
+name = "hex"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "hkdf"
@@ -2363,7 +2416,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "arc-swap",
  "base64 0.23.0",
@@ -2372,8 +2425,10 @@ dependencies = [
  "colored",
  "crossbeam",
  "dashmap",
+ "ed25519-dalek",
  "flate2",
  "futures",
+ "hex",
  "hmac",
  "hyper",
  "image",
@@ -2413,6 +2468,8 @@ dependencies = [
  "tracing-subscriber",
  "ureq",
  "uuid",
+ "wasm-encoder 0.255.0",
+ "wasmparser 0.255.0",
  "wasmtime",
  "wasmtime-wasi",
  "wasmtime-wasi-http",
@@ -2421,7 +2478,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2432,7 +2489,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "serde_json",
  "tracing",
@@ -2441,7 +2498,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -2453,7 +2510,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "crc-fast",
  "phf",
@@ -2466,7 +2523,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "pumpkin-data",
  "pumpkin-protocol",
@@ -2481,7 +2538,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "heck",
  "proc-macro-error2",
@@ -2493,7 +2550,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "bytes",
  "cesu8",
@@ -2508,7 +2565,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "aes",
  "async-compression",
@@ -2533,7 +2590,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "base64 0.23.0",
  "bytes",
@@ -2560,7 +2617,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.2"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5f127823aecabb6bca058deed3c7997fed133531"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#3b0fdfa4f8942059803116344ef3aaa3f32a0f8c"
 dependencies = [
  "arc-swap",
  "bitflags 2.13.1",
@@ -2873,9 +2930,9 @@ dependencies = [
 
 [[package]]
 name = "ruzstd"
-version = "0.8.3"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7c1c839d570d835527c9a5e4db7cb2198683a988cb9d7293fc8674e6bd58fc8"
+checksum = "a252f5e20f038fe7b4ea53e073e65398d652c864cc162fc77c56c2f13717b888"
 
 [[package]]
 name = "ryu"
@@ -3721,6 +3778,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "wasm-encoder"
+version = "0.255.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9b524283fb5df62eec102ed0574838961bdd7ba5ac9c50d38e2756c51c971a42"
+dependencies = [
+ "leb128fmt",
+ "wasmparser 0.255.0",
+]
+
+[[package]]
 name = "wasm-metadata"
 version = "0.244.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3749,6 +3816,19 @@ name = "wasmparser"
 version = "0.252.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d3eb099dcadcde5be9eef55e3a337128efd4e44b4c93122487e4d2e4e1c6627c"
+dependencies = [
+ "bitflags 2.13.1",
+ "hashbrown 0.17.0",
+ "indexmap",
+ "semver",
+ "serde",
+]
+
+[[package]]
+name = "wasmparser"
+version = "0.255.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8e329ef4b5d46e73b91d3ac6924417cad55a8cbbf869c199283383427c3320b"
 dependencies = [
  "bitflags 2.13.1",
  "hashbrown 0.17.0",

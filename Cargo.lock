@@ -2715,9 +2715,9 @@ checksum = "c08d65885ee38876c4f86fa503fb49d7b507c2b62552df7c70b2fce627e06381"
 
 [[package]]
 name = "ordered-float"
-version = "5.3.0"
+version = "5.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7d950ca161dc355eaf28f82b11345ed76c6e1f6eb1f4f4479e0323b9e2fbd0e"
+checksum = "8c7c9e0d9b23589f26070720bac724174bfec1083e82f7854cdd0267518343c0"
 dependencies = [
  "num-traits",
 ]
@@ -3114,7 +3114,7 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "aes 0.9.0",
  "arc-swap",
@@ -3169,8 +3169,8 @@ dependencies = [
  "tracing-subscriber",
  "ureq",
  "uuid",
- "wasm-encoder 0.256.0",
- "wasmparser 0.256.0",
+ "wasm-encoder 0.257.1",
+ "wasmparser 0.257.1",
  "wasmtime",
  "wasmtime-wasi",
  "wasmtime-wasi-http",
@@ -3180,7 +3180,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-api-macros"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -3191,7 +3191,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-codecs"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "serde_json",
  "tracing",
@@ -3200,7 +3200,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-config"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "pumpkin-util",
  "serde",
@@ -3212,7 +3212,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-data"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "crc-fast",
  "phf",
@@ -3225,7 +3225,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-inventory"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "pumpkin-data",
  "pumpkin-protocol",
@@ -3240,7 +3240,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "heck",
  "proc-macro-error2",
@@ -3253,7 +3253,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "bytes",
  "cesu8",
@@ -3267,7 +3267,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "aes 0.9.0",
  "async-compression",
@@ -3282,6 +3282,7 @@ dependencies = [
  "pumpkin-util",
  "pumpkin-world",
  "serde",
+ "serde_json",
  "thiserror 2.0.20",
  "tokio",
  "uuid",
@@ -3291,12 +3292,13 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "base64 0.23.1",
  "bytes",
  "colored",
  "crypto-bigint 0.7.5",
+ "dashmap",
  "ecdsa 0.17.0",
  "md5",
  "num-derive",
@@ -3309,7 +3311,6 @@ dependencies = [
  "serde_json",
  "sha2 0.11.0",
  "thiserror 2.0.20",
- "tokio",
  "ureq",
  "uuid",
 ]
@@ -3317,7 +3318,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-world"
 version = "0.1.0-dev+26.2-26.40"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#cfef833394eb4a894283e53bd6f19866c4c4bdc3"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#4c710006130643e6fb82aa46c5665271afc3b912"
 dependencies = [
  "arc-swap",
  "bitflags 2.13.1",
@@ -4860,9 +4861,9 @@ checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
 
 [[package]]
 name = "uuid"
-version = "1.24.0"
+version = "1.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf3923a6f5c4c6382e0b653c4117f48d631ea17f38ed86e2a828e6f7412f5239"
+checksum = "f053576934f05a761a402421fbbe3d425d9366f75f978806a037b3ca481abecc"
 dependencies = [
  "getrandom 0.4.1",
  "js-sys",
@@ -4987,12 +4988,12 @@ dependencies = [
 
 [[package]]
 name = "wasm-encoder"
-version = "0.256.0"
+version = "0.257.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec1492381bfd5ea51c2a99a919b676662559925cb8d7490547ec2e14c1ad3eb1"
+checksum = "7d8ad9f0a39050867bda22e6486c316e2e52d20a42154d5bc433934bf738d085"
 dependencies = [
  "leb128fmt",
- "wasmparser 0.256.0",
+ "wasmparser 0.257.1",
 ]
 
 [[package]]
@@ -5034,15 +5035,13 @@ dependencies = [
 
 [[package]]
 name = "wasmparser"
-version = "0.256.0"
+version = "0.257.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "60bd825ffedc6cba8a642924ba7ae424afbc47811cffbcb7b92031ec24e59b4c"
+checksum = "d92fc335fb6d48f46bda1d8b26b69e28320c15ac3272208333833d6e217e2b4a"
 dependencies = [
  "bitflags 2.13.1",
- "hashbrown 0.17.0",
  "indexmap",
  "semver",
- "serde",
 ]
 
 [[package]]

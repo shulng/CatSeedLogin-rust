@@ -3130,7 +3130,93 @@ dependencies = [
 [[package]]
 name = "pumpkin"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "pumpkin-config",
+ "pumpkin-core",
+ "pumpkin-data",
+ "pumpkin-util",
+ "pumpkin-wasm-host",
+ "pumpkin-world",
+ "rayon",
+ "rustls",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "pumpkin-api-macros"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "proc-macro-error2",
+ "proc-macro2",
+ "quote",
+ "syn 3.0.1",
+]
+
+[[package]]
+name = "pumpkin-auth"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "base64 0.23.1",
+ "crypto-bigint 0.7.5",
+ "ecdsa 0.17.0",
+ "md5",
+ "p384 0.14.0",
+ "reqwest",
+ "rsa",
+ "rustls",
+ "serde",
+ "serde_json",
+ "sha2 0.11.0",
+ "thiserror 2.0.20",
+ "uuid",
+ "webpki-root-certs",
+]
+
+[[package]]
+name = "pumpkin-codecs"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "serde_json",
+ "tracing",
+]
+
+[[package]]
+name = "pumpkin-command"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "pumpkin-codecs",
+ "pumpkin-data",
+ "pumpkin-nbt",
+ "pumpkin-protocol",
+ "pumpkin-util",
+ "rustc-hash",
+ "serde_json",
+ "tracing",
+ "uuid",
+]
+
+[[package]]
+name = "pumpkin-config"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "pumpkin-util",
+ "serde",
+ "toml",
+ "tracing",
+ "uuid",
+]
+
+[[package]]
+name = "pumpkin-core"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "aes 0.9.0",
  "arc-swap",
@@ -3147,7 +3233,6 @@ dependencies = [
  "futures",
  "hex",
  "hmac 0.13.0",
- "hyper",
  "image",
  "indexmap",
  "libc",
@@ -3155,17 +3240,14 @@ dependencies = [
  "notify",
  "num-bigint 0.5.1",
  "ordered-float",
- "postcard",
  "pumpkin-auth",
  "pumpkin-command",
  "pumpkin-config",
  "pumpkin-data",
  "pumpkin-gametest",
- "pumpkin-host-bindings",
  "pumpkin-inventory",
  "pumpkin-macros",
  "pumpkin-nbt",
- "pumpkin-plugin-runtime",
  "pumpkin-protocol",
  "pumpkin-util",
  "pumpkin-world",
@@ -3188,91 +3270,16 @@ dependencies = [
  "tokio",
  "tokio-util",
  "tracing",
- "tracing-serde-structured",
  "tracing-subscriber",
  "uuid",
- "wasm-encoder 0.259.0",
- "wasmparser 0.259.0",
- "wasmtime",
- "wasmtime-wasi",
- "wasmtime-wasi-http",
  "webrtc",
  "xxhash-rust",
 ]
 
 [[package]]
-name = "pumpkin-api-macros"
-version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
-dependencies = [
- "proc-macro-error2",
- "proc-macro2",
- "quote",
- "syn 3.0.1",
-]
-
-[[package]]
-name = "pumpkin-auth"
-version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
-dependencies = [
- "base64 0.23.1",
- "crypto-bigint 0.7.5",
- "ecdsa 0.17.0",
- "md5",
- "p384 0.14.0",
- "reqwest",
- "rsa",
- "rustls",
- "serde",
- "serde_json",
- "sha2 0.11.0",
- "thiserror 2.0.20",
- "uuid",
- "webpki-root-certs",
-]
-
-[[package]]
-name = "pumpkin-codecs"
-version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
-dependencies = [
- "serde_json",
- "tracing",
-]
-
-[[package]]
-name = "pumpkin-command"
-version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
-dependencies = [
- "pumpkin-codecs",
- "pumpkin-data",
- "pumpkin-nbt",
- "pumpkin-protocol",
- "pumpkin-util",
- "rustc-hash",
- "serde_json",
- "tracing",
- "uuid",
-]
-
-[[package]]
-name = "pumpkin-config"
-version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
-dependencies = [
- "pumpkin-util",
- "serde",
- "toml",
- "tracing",
- "uuid",
-]
-
-[[package]]
 name = "pumpkin-data"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "crc-fast",
  "phf",
@@ -3285,7 +3292,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-gametest"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "async-trait",
  "pumpkin-data",
@@ -3299,17 +3306,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "pumpkin-host-bindings"
-version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
-dependencies = [
- "wasmtime",
-]
-
-[[package]]
 name = "pumpkin-inventory"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "pumpkin-data",
  "pumpkin-nbt",
@@ -3324,7 +3323,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-macros"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "heck",
  "proc-macro-error2",
@@ -3336,7 +3335,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-nbt"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "bytes",
  "cesu8",
@@ -3350,7 +3349,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-plugin-runtime"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "futures",
  "thiserror 2.0.20",
@@ -3362,7 +3361,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-protocol"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "aes 0.9.0",
  "async-compression",
@@ -3387,7 +3386,7 @@ dependencies = [
 [[package]]
 name = "pumpkin-util"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "bytes",
  "colored",
@@ -3404,9 +3403,107 @@ dependencies = [
 ]
 
 [[package]]
+name = "pumpkin-wasm-host"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "pumpkin-core",
+ "pumpkin-plugin-runtime",
+ "pumpkin-wasm-host-common",
+ "pumpkin-wasm-host-v0_1",
+ "pumpkin-wasm-host-v0_2",
+ "tokio",
+ "tracing",
+ "wasmtime",
+ "wasmtime-wasi",
+ "wasmtime-wasi-http",
+]
+
+[[package]]
+name = "pumpkin-wasm-host-common"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "ed25519-dalek",
+ "hex",
+ "hyper",
+ "postcard",
+ "pumpkin-auth",
+ "pumpkin-core",
+ "pumpkin-data",
+ "pumpkin-inventory",
+ "pumpkin-plugin-runtime",
+ "pumpkin-util",
+ "pumpkin-world",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.20",
+ "tokio",
+ "tracing",
+ "tracing-serde-structured",
+ "wasm-encoder 0.259.0",
+ "wasmparser 0.259.0",
+ "wasmtime",
+ "wasmtime-wasi",
+ "wasmtime-wasi-http",
+]
+
+[[package]]
+name = "pumpkin-wasm-host-v0_1"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "bytes",
+ "pumpkin-config",
+ "pumpkin-core",
+ "pumpkin-data",
+ "pumpkin-inventory",
+ "pumpkin-macros",
+ "pumpkin-nbt",
+ "pumpkin-protocol",
+ "pumpkin-util",
+ "pumpkin-wasm-host-common",
+ "pumpkin-world",
+ "rand",
+ "serde_json",
+ "sysinfo",
+ "time",
+ "tokio",
+ "tracing",
+ "uuid",
+ "wasmtime",
+]
+
+[[package]]
+name = "pumpkin-wasm-host-v0_2"
+version = "0.2.0+26.3-26.51"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
+dependencies = [
+ "bytes",
+ "pumpkin-config",
+ "pumpkin-core",
+ "pumpkin-data",
+ "pumpkin-inventory",
+ "pumpkin-macros",
+ "pumpkin-nbt",
+ "pumpkin-protocol",
+ "pumpkin-util",
+ "pumpkin-wasm-host-common",
+ "pumpkin-world",
+ "rand",
+ "serde_json",
+ "sysinfo",
+ "time",
+ "tokio",
+ "tracing",
+ "uuid",
+ "wasmtime",
+]
+
+[[package]]
 name = "pumpkin-world"
 version = "0.2.0+26.3-26.51"
-source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#5a7714e8c47cb7cb2d42510598f60e34bf734184"
+source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#8adc29feb5e30a29934ef1deb8030d5d822c9b7e"
 dependencies = [
  "arc-swap",
  "bitflags 2.13.2",

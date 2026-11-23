@@ -14,7 +14,7 @@ dependencies = [
  "pumpkin-data",
  "pumpkin-protocol",
  "pumpkin-util",
- "rand 0.10.3",
+ "rand 0.10.4",
  "tokio",
 ]
 
@@ -2798,7 +2798,7 @@ version = "0.2.2+26.3-26.63"
 source = "git+https://github.com/Pumpkin-MC/Pumpkin.git?branch=master#a49be4bee2113e4cf812de3117c61bc3e9d06d3f"
 dependencies = [
  "pumpkin-util",
- "rand 0.10.3",
+ "rand 0.10.4",
  "serde",
  "toml",
  "tracing",
@@ -2841,7 +2841,7 @@ dependencies = [
  "pumpkin-protocol",
  "pumpkin-util",
  "pumpkin-world",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rayon",
  "reqwest",
  "rsa",
@@ -2876,7 +2876,7 @@ dependencies = [
  "phf",
  "pumpkin-nbt",
  "pumpkin-util",
- "rand 0.10.3",
+ "rand 0.10.4",
  "reqwest",
  "rustls",
  "serde",
@@ -2910,7 +2910,7 @@ dependencies = [
  "pumpkin-nbt",
  "pumpkin-protocol",
  "pumpkin-util",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rustc-hash",
  "thiserror 2.0.20",
  "tracing",
@@ -3054,7 +3054,7 @@ dependencies = [
  "pumpkin-util",
  "pumpkin-wasm-host-common",
  "pumpkin-world",
- "rand 0.10.3",
+ "rand 0.10.4",
  "serde_json",
  "sysinfo",
  "time",
@@ -3082,7 +3082,7 @@ dependencies = [
  "pumpkin-data",
  "pumpkin-nbt",
  "pumpkin-util",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rayon",
  "rustc-hash",
  "ruzstd",
@@ -3147,9 +3147,9 @@ dependencies = [
 
 [[package]]
 name = "rand"
-version = "0.10.3"
+version = "0.10.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "65c9fb96cbc91e3478eaae79a69fcd3f1ae4ad052e471fe6732fff548984b4af"
+checksum = "8f6fa277c67e6ea590466f04c3fe82cb509f0864fe470643e5570de9514a9b11"
 dependencies = [
  "chacha20",
  "getrandom 0.4.1",
@@ -3420,7 +3420,7 @@ dependencies = [
  "hex",
  "log",
  "pem",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rcgen",
  "rtc-crypto",
  "rtc-datachannel",
@@ -3457,7 +3457,7 @@ dependencies = [
  "ctr",
  "hmac 0.12.1",
  "md-5",
- "rand 0.10.3",
+ "rand 0.10.4",
  "ring",
  "sha1 0.10.7",
  "subtle",
@@ -3524,7 +3524,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43e7df85d7aacf6e3f69bb922a6c9f83b2a29461038d06285df7642206df64cf"
 dependencies = [
  "log",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rtc-rtcp",
  "rtc-rtp",
  "rtc-shared",
@@ -3552,7 +3552,7 @@ checksum = "a76840ad2aff52efeb16a613db26c16981841a6cf50907bff950884f00f9d9a9"
 dependencies = [
  "byteorder",
  "bytes",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rtc-rtp",
  "rtc-shared",
  "thiserror 2.0.20",
@@ -3576,7 +3576,7 @@ checksum = "2a640f266927139a899a3a93b5cf4aa3626594ee2e5d26202b60930bb42cb445"
 dependencies = [
  "bytes",
  "memchr",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rtc-shared",
  "serde",
 ]
@@ -3590,7 +3590,7 @@ dependencies = [
  "bytes",
  "crc32c",
  "log",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rtc-shared",
  "rustc-hash",
  "slab",
@@ -3603,7 +3603,7 @@ version = "0.21.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cd69b1ea06978e045f374ec19eb34177ee4e4f8349cc7d9c0b183683fa7b2d1f"
 dependencies = [
- "rand 0.10.3",
+ "rand 0.10.4",
  "rtc-shared",
  "url",
 ]
@@ -3617,7 +3617,7 @@ dependencies = [
  "bitflags 1.3.2",
  "bytes",
  "nix",
- "rand 0.10.3",
+ "rand 0.10.4",
  "serde",
  "substring",
  "thiserror 2.0.20",
@@ -3649,7 +3649,7 @@ dependencies = [
  "bytes",
  "crc",
  "lazy_static",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rtc-crypto",
  "rtc-shared",
  "sansio",
@@ -5114,7 +5114,7 @@ dependencies = [
  "bitflags 2.13.2",
  "bytes",
  "futures",
- "rand 0.10.3",
+ "rand 0.10.4",
  "rustix",
  "rustix-linux-procfs",
  "thiserror 2.0.20",
